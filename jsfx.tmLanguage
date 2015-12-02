@@ -238,7 +238,7 @@
 					<key>disabled</key>
 					<string>0</string>
 					<key>match</key>
-					<string>([=]{3})|([!]{1}[=]{2})</string>
+					<string>([=]{3})|([!][=]{2})</string>
 					<key>name</key>
 					<string>keyword.operator.jsfx</string>
 				</dict>
@@ -300,7 +300,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(spl(?=[(]{1,}))</string>
+					<string>\b(spl(?=[(]+))</string>
 					<key>name</key>
 					<string>support.function.jsfx</string>
 				</dict>
@@ -895,7 +895,7 @@
 			<key>disabled</key>
 			<string>0</string>
 			<key>match</key>
-			<string>\b((-?\d{1,}([.]{1}\d{1,})?)\b|\b([\$0]{1}x[0123456789ABCDEFabcdef]{1,8})\b|\b(\$(-\d{1,3})|('.')))\b</string>
+			<string>\b((-?\d+([.]\d+)?)\b|\b([\$0]x[0123456789ABCDEFabcdef]{1,8})\b|\b(\$(-\d{1,3})|('.')))\b</string>
 			<key>name</key>
 			<string>constant.numeric.jsfx</string>
 		</dict>
