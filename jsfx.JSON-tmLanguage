@@ -301,7 +301,7 @@
 					"name": "constant.language.jsfx"
 				},
 				{
-					"match": "\\bslider_next_chg(?=[(]{1,]})",
+					"match": "\\bslider_next_chg(?=[(]+)",
 					"name": "support.function.jsfx"
 				}
 			]
@@ -387,7 +387,7 @@
 		"numerics": {
 			"comment": "Numerical values - 154 or 187.7 or 0x548 or $x548 or $-4 (for bit masks)",
 			"disabled": "0",
-			"match": "\\b((-?\\d+([.]\\d+)?)\\b|\\b([\\$0]x[0123456789ABCDEFabcdef]{1,8})\\b|\\b(\\$(-\\d{1,3})|('.')))\\b",
+			"match": "\\b((-?\\d+([.]\\d+)?)|([\\$0]x[0123456789ABCDEFabcdef]{1,8})|(\\$(-\\d{1,3})|('.')))\\b",
 			"name": "constant.numeric.jsfx"
 		},
 		"strings": {
