@@ -36,14 +36,14 @@
 				{
 					"begin": "^(desc|(in|out)_pin|options)(?=:.+)",
 					"beginCaptures": { "0": { "name": "entity.name.section.jsfx" } },
-					"end": "\\z",
+					"end": "(?=\\n)",
 					"endCaptures": { "0": { "name": "meta.nl.jsfx" } },
 					"name": "meta.block.jsfx",
 					"patterns":	[
 						{
 							"begin": ":",
 							"beginCaptures": { "0": { "name": "keyword.operator.jsfx" } },
-							"end": "\\z",
+							"end": "(?=\\n)",
 							"endCaptures": { "0": { "name": "meta.nl.jsfx" } },
 							"name": "meta.section.jsfx.gfx",
 							"patterns":	[ { "include": "#string_unquoted" } ]
@@ -53,14 +53,14 @@
 				{
 					"begin": "^filename(?=:\\d,)",
 					"beginCaptures": { "0": { "name": "entity.name.section.jsfx" } },
-					"end": "\\z",
+					"end": "(?=\\n)",
 					"endCaptures": { "0": { "name": "meta.nl.jsfx" } },
 					"name": "meta.block.jsfx",
 					"patterns":	[
 						{
 							"begin": ":",
 							"beginCaptures": { "0": { "name": "keyword.operator.jsfx" } },
-							"end": "\\z",
+							"end": "(?=\\n)",
 							"endCaptures": { "0": { "name": "meta.nl.jsfx" } },
 							"name": "meta.block.jsfx",
 							"patterns":	[
@@ -74,7 +74,7 @@
 								{
 									"begin": ",",
 									"beginCaptures": { "0": { "name": "meta.nl.jsfx" } },
-									"end": "\\z",
+									"end": "(?=\\n)",
 									"endCaptures": { "0": { "name": "meta.nl.jsfx" } },
 									"name": "meta.section.jsfx.gfx",
 									"patterns":	[ { "include": "#string_unquoted" } ]
@@ -86,16 +86,14 @@
 				{
 					"begin": "^slider\\d{1,2}(?=:)",
 					"beginCaptures": { "0": { "name": "entity.name.section.jsfx" } },
-					"end": "\\z",
-					"endCaptures": { "0": { "name": "meta.nl.jsfx" } },
+					"end": "(?=\\n)",
 					"name": "meta.block.jsfx",
 					"patterns":	[
 						{ "include": "#numerics" },
 						{
 							"begin": ">",
 							"beginCaptures": { "0": { "name": "keyword.operator.jsfx" } },
-							"end": "\\z",
-							"endCaptures": { "0": { "name": "meta.nl.jsfx" } },
+							"end": "(?=\\n)",
 							"name": "meta.section.jsfx.gfx",
 							"patterns":	[ { "include": "#string_unquoted" } ]
 						},
@@ -112,7 +110,7 @@
 				{
 					"begin": "^import ",
 					"beginCaptures": { "0": { "name": "entity.name.section.jsfx" } },
-					"end": "\\z",
+					"end": "(?=\\n)",
 					"endCaptures": { "0": { "name": "meta.nl.jsfx" } },
 					"name": "meta.section.jsfx.gfx",
 					"patterns":	[ { "include": "#string_unquoted" } ]
@@ -128,7 +126,7 @@
 						{
 							"comment": "read-write variables",
 							"disabled": "0",
-							"match": "\\bext_(noinit|nodenorm)\\b",
+							"match": "\\bext_no(init|denorm)\\b",
 							"name": "variable.language.jsfx"
 						},
 						{ "include": "#numerics"	},
@@ -220,7 +218,7 @@
 					"comment": "User functions",
 					"begin": "\\bfunction\\b",
 					"beginCaptures": { "0": { "name": "storage.type.jsfx" } },
-					"end": "\\z",
+					"end": "(?=\\n)",
 					"endCaptures": { "0": { "name": "meta.nl.jsfx" } },
 					"name": "meta.section.jsfx.function",
 					"patterns":	[
@@ -231,7 +229,7 @@
 						{
 							"begin": "\\b(local|instance)(?=[(])\\b",
 							"beginCaptures": { "0": { "name": "storage.modifier.jsfx" } },
-							"end": "\\z",
+							"end": "(?=\\n)",
 							"endCaptures": { "0": { "name": "meta.nl.jsfx" } },
 							"name": "meta.section.jsfx.function"
 						},
@@ -247,7 +245,7 @@
 				{
 					"comment": "Global read-only variables",
 					"disabled": "0",
-					"match": "\\b([\\$]pi|num_ch|s(amplesblock|rate))\\b",
+					"match": "$pi\\b|\\b(num_ch|s(amplesblock|rate))\\b",
 					"name": "constant.language.jsfx"
 				},
 				{
@@ -259,7 +257,7 @@
 				{
 					"comment": "Global read-write variables",
 					"disabled": "0",
-					"match": "\\b((slider|reg)\\d{1,2}\\b)|\\b_global\\.\\w+",
+					"match": "\\b(slider|reg)\\d{1,2}\\b|\\b_global\\.\\w+",
 					"name": "variable.language.jsfx"
 				},
 				{
@@ -271,7 +269,7 @@
 				{
 					"comment": "TwoChars Operators",
 					"disabled": "0",
-					"match": "(\\|\\||&&|<<|>>|--|\\+\\+|(<<|>>|\\+|-|\\*|\\/|%|&|\\||\\^)=)",
+					"match": "(\\|\\|&&|<<|>>|--|\\+\\+|(<<|>>|\\+|-|\\*|\\/|%|&|\\||\\^)=)",
 					"name": "keyword.operator.jsfx"
 				},
 				{
@@ -363,7 +361,7 @@
 				{
 					"begin": "//",
 					"beginCaptures": { "0": { "name": "punctuation.definition.comment.jsfx" } },
-					"end": "\\z",
+					"end": "(?=\\n)",
 					"name": "comment.line.double-slash.jsfx"
 				}
 			]
@@ -387,7 +385,7 @@
 		"numerics": {
 			"comment": "Numerical values - 154 or 187.7 or 0x548 or $x548 or $-4 (for bit masks)",
 			"disabled": "0",
-			"match": "\\b((-?\\d+([.]\\d+)?)|([\\$0]x[0123456789ABCDEFabcdef]{1,8})|(\\$(-\\d{1,3})|('.')))\\b",
+			"match": "((-?\\d+([.]\\d+)?)|([\\$0]x[0123456789ABCDEFabcdef]{1,8})|(\\$24(-\\d{1,3})))\\b",
 			"name": "constant.numeric.jsfx"
 		},
 		"strings": {

@@ -87,7 +87,7 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>\z</string>
+					<string>(?=\n)</string>
 					<key>name</key>
 					<string>comment.line.double-slash.jsfx</string>
 				</dict>
@@ -111,7 +111,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\bslider_next_chg(?=[(]{1,]})</string>
+					<string>\bslider_next_chg(?=[(]+)</string>
 					<key>name</key>
 					<string>support.function.jsfx</string>
 				</dict>
@@ -143,7 +143,7 @@
 					<key>comment</key>
 					<string>User functions</string>
 					<key>end</key>
-					<string>\z</string>
+					<string>(?=\n)</string>
 					<key>endCaptures</key>
 					<dict>
 						<key>0</key>
@@ -174,7 +174,7 @@
 								</dict>
 							</dict>
 							<key>end</key>
-							<string>\z</string>
+							<string>(?=\n)</string>
 							<key>endCaptures</key>
 							<dict>
 								<key>0</key>
@@ -208,7 +208,7 @@
 					<key>disabled</key>
 					<string>0</string>
 					<key>match</key>
-					<string>\b([\$]pi|num_ch|s(amplesblock|rate))\b</string>
+					<string>$pi\b|\b(num_ch|s(amplesblock|rate))\b</string>
 					<key>name</key>
 					<string>constant.language.jsfx</string>
 				</dict>
@@ -228,7 +228,7 @@
 					<key>disabled</key>
 					<string>0</string>
 					<key>match</key>
-					<string>\b((slider|reg)\d{1,2}\b)|\b_global\.\w+</string>
+					<string>\b(slider|reg)\d{1,2}\b|\b_global\.\w+</string>
 					<key>name</key>
 					<string>variable.language.jsfx</string>
 				</dict>
@@ -248,7 +248,7 @@
 					<key>disabled</key>
 					<string>0</string>
 					<key>match</key>
-					<string>(\|\||&amp;&amp;|&lt;&lt;|&gt;&gt;|--|\+\+|(&lt;&lt;|&gt;&gt;|\+|-|\*|\/|%|&amp;|\||\^)=)</string>
+					<string>(\|\|&amp;&amp;|&lt;&lt;|&gt;&gt;|--|\+\+|(&lt;&lt;|&gt;&gt;|\+|-|\*|\/|%|&amp;|\||\^)=)</string>
 					<key>name</key>
 					<string>keyword.operator.jsfx</string>
 				</dict>
@@ -334,7 +334,7 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>\z</string>
+					<string>(?=\n)</string>
 					<key>endCaptures</key>
 					<dict>
 						<key>0</key>
@@ -359,7 +359,7 @@
 								</dict>
 							</dict>
 							<key>end</key>
-							<string>\z</string>
+							<string>(?=\n)</string>
 							<key>endCaptures</key>
 							<dict>
 								<key>0</key>
@@ -392,7 +392,7 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>\z</string>
+					<string>(?=\n)</string>
 					<key>endCaptures</key>
 					<dict>
 						<key>0</key>
@@ -417,7 +417,7 @@
 								</dict>
 							</dict>
 							<key>end</key>
-							<string>\z</string>
+							<string>(?=\n)</string>
 							<key>endCaptures</key>
 							<dict>
 								<key>0</key>
@@ -466,7 +466,7 @@
 										</dict>
 									</dict>
 									<key>end</key>
-									<string>\z</string>
+									<string>(?=\n)</string>
 									<key>endCaptures</key>
 									<dict>
 										<key>0</key>
@@ -501,15 +501,7 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>\z</string>
-					<key>endCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>meta.nl.jsfx</string>
-						</dict>
-					</dict>
+					<string>(?=\n)</string>
 					<key>name</key>
 					<string>meta.block.jsfx</string>
 					<key>patterns</key>
@@ -530,15 +522,7 @@
 								</dict>
 							</dict>
 							<key>end</key>
-							<string>\z</string>
-							<key>endCaptures</key>
-							<dict>
-								<key>0</key>
-								<dict>
-									<key>name</key>
-									<string>meta.nl.jsfx</string>
-								</dict>
-							</dict>
+							<string>(?=\n)</string>
 							<key>name</key>
 							<string>meta.section.jsfx.gfx</string>
 							<key>patterns</key>
@@ -575,7 +559,7 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>\z</string>
+					<string>(?=\n)</string>
 					<key>endCaptures</key>
 					<dict>
 						<key>0</key>
@@ -629,7 +613,7 @@
 							<key>disabled</key>
 							<string>0</string>
 							<key>match</key>
-							<string>\bext_(noinit|nodenorm)\b</string>
+							<string>\bext_no(init|denorm)\b</string>
 							<key>name</key>
 							<string>variable.language.jsfx</string>
 						</dict>
@@ -895,7 +879,7 @@
 			<key>disabled</key>
 			<string>0</string>
 			<key>match</key>
-			<string>\b((-?\d+([.]\d+)?)\b|\b([\$0]x[0123456789ABCDEFabcdef]{1,8})\b|\b(\$(-\d{1,3})|('.')))\b</string>
+			<string>((-?\d+([.]\d+)?)|([\$0]x[0123456789ABCDEFabcdef]{1,8})|(\$24(-\d{1,3})))\b</string>
 			<key>name</key>
 			<string>constant.numeric.jsfx</string>
 		</dict>
