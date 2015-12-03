@@ -36,14 +36,14 @@
 				{
 					"begin": "^(desc|(in|out)_pin|options)(?=:.+)",
 					"beginCaptures": { "0": { "name": "entity.name.section.jsfx" } },
-					"end": "\\n",
+					"end": "(?=\\n)",
 					"endCaptures": { "0": { "name": "meta.nl.jsfx" } },
 					"name": "meta.block.jsfx",
 					"patterns":	[
 						{
 							"begin": ":",
 							"beginCaptures": { "0": { "name": "keyword.operator.jsfx" } },
-							"end": "\\n",
+							"end": "(?=\\n)",
 							"endCaptures": { "0": { "name": "meta.nl.jsfx" } },
 							"name": "meta.section.jsfx.gfx",
 							"patterns":	[ { "include": "#string_unquoted" } ]
@@ -53,14 +53,14 @@
 				{
 					"begin": "^filename(?=:\\d,)",
 					"beginCaptures": { "0": { "name": "entity.name.section.jsfx" } },
-					"end": "\\n",
+					"end": "(?=\\n)",
 					"endCaptures": { "0": { "name": "meta.nl.jsfx" } },
 					"name": "meta.block.jsfx",
 					"patterns":	[
 						{
 							"begin": ":",
 							"beginCaptures": { "0": { "name": "keyword.operator.jsfx" } },
-							"end": "\\n",
+							"end": "(?=\\n)",
 							"endCaptures": { "0": { "name": "meta.nl.jsfx" } },
 							"name": "meta.block.jsfx",
 							"patterns":	[
@@ -74,7 +74,7 @@
 								{
 									"begin": ",",
 									"beginCaptures": { "0": { "name": "meta.nl.jsfx" } },
-									"end": "\\n",
+									"end": "(?=\\n)",
 									"endCaptures": { "0": { "name": "meta.nl.jsfx" } },
 									"name": "meta.section.jsfx.gfx",
 									"patterns":	[ { "include": "#string_unquoted" } ]
@@ -110,7 +110,7 @@
 				{
 					"begin": "^import ",
 					"beginCaptures": { "0": { "name": "entity.name.section.jsfx" } },
-					"end": "\\n",
+					"end": "(?=\\n)",
 					"endCaptures": { "0": { "name": "meta.nl.jsfx" } },
 					"name": "meta.section.jsfx.gfx",
 					"patterns":	[ { "include": "#string_unquoted" } ]
@@ -218,7 +218,7 @@
 					"comment": "User functions",
 					"begin": "\\bfunction\\b",
 					"beginCaptures": { "0": { "name": "storage.type.jsfx" } },
-					"end": "\\n",
+					"end": "(?=\\n)",
 					"endCaptures": { "0": { "name": "meta.nl.jsfx" } },
 					"name": "meta.section.jsfx.function",
 					"patterns":	[
@@ -229,7 +229,7 @@
 						{
 							"begin": "\\b(local|instance)(?=[(])\\b",
 							"beginCaptures": { "0": { "name": "storage.modifier.jsfx" } },
-							"end": "\\n",
+							"end": "(?=\\n)",
 							"endCaptures": { "0": { "name": "meta.nl.jsfx" } },
 							"name": "meta.section.jsfx.function"
 						},
@@ -361,7 +361,7 @@
 				{
 					"begin": "//",
 					"beginCaptures": { "0": { "name": "punctuation.definition.comment.jsfx" } },
-					"end": "\\n",
+					"end": "(?=\\n)",
 					"name": "comment.line.double-slash.jsfx"
 				}
 			]
