@@ -126,7 +126,7 @@
 						{
 							"comment": "read-write variables",
 							"disabled": "0",
-							"match": "\\bext_(noinit|nodenorm)\\b",
+							"match": "\\bext_no(init|denorm)\\b",
 							"name": "variable.language.jsfx"
 						},
 						{ "include": "#numerics"	},
@@ -245,7 +245,7 @@
 				{
 					"comment": "Global read-only variables",
 					"disabled": "0",
-					"match": "\\b([\\$]pi|num_ch|s(amplesblock|rate))\\b",
+					"match": "[\\x24]pi\\b|\\b(num_ch|s(amplesblock|rate))\\b",
 					"name": "constant.language.jsfx"
 				},
 				{
@@ -257,7 +257,7 @@
 				{
 					"comment": "Global read-write variables",
 					"disabled": "0",
-					"match": "\\b((slider|reg)\\d{1,2}\\b)|\\b_global\\.\\w+",
+					"match": "\\b(slider|reg)\\d{1,2}\\b|\\b_global\\.\\w+",
 					"name": "variable.language.jsfx"
 				},
 				{
@@ -269,7 +269,7 @@
 				{
 					"comment": "TwoChars Operators",
 					"disabled": "0",
-					"match": "(\\|\\||&&|<<|>>|--|\\+\\+|(<<|>>|\\+|-|\\*|\\/|%|&|\\||\\^)=)",
+					"match": "(\\|\\|&&|<<|>>|--|\\+\\+|(<<|>>|\\+|-|\\*|\\/|%|&|\\||\\^)=)",
 					"name": "keyword.operator.jsfx"
 				},
 				{
@@ -385,7 +385,7 @@
 		"numerics": {
 			"comment": "Numerical values - 154 or 187.7 or 0x548 or $x548 or $-4 (for bit masks)",
 			"disabled": "0",
-			"match": "\\b((-?\\d+([.]\\d+)?)|([\\$0]x[0123456789ABCDEFabcdef]{1,8})|(\\$(-\\d{1,3})|('.')))\\b",
+			"match": "((-?\\d+([.]\d+)?)|([\\x240]x[0123456789ABCDEFabcdef]{1,8})|(\\x24(-\\d{1,3})))\\b",
 			"name": "constant.numeric.jsfx"
 		},
 		"strings": {
