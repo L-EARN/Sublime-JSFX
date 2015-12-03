@@ -86,16 +86,14 @@
 				{
 					"begin": "^slider\\d{1,2}(?=:)",
 					"beginCaptures": { "0": { "name": "entity.name.section.jsfx" } },
-					"end": "\\n",
-					"endCaptures": { "0": { "name": "meta.nl.jsfx" } },
+					"end": "(?=\\n)",
 					"name": "meta.block.jsfx",
 					"patterns":	[
 						{ "include": "#numerics" },
 						{
 							"begin": ">",
 							"beginCaptures": { "0": { "name": "keyword.operator.jsfx" } },
-							"end": "\\n",
-							"endCaptures": { "0": { "name": "meta.nl.jsfx" } },
+							"end": "(?=\\n)",
 							"name": "meta.section.jsfx.gfx",
 							"patterns":	[ { "include": "#string_unquoted" } ]
 						},
